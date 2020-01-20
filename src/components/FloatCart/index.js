@@ -4,10 +4,24 @@ import CartProduct from './CartProduct';
 import './style.scss';
 
 const FloatCart = ({ showCart, setShowCart, cartProducts, setCartProducts }) => {
+  const [state, setState] = useState(false);
+
+  const removeProduct = (product) => {
+    if (product.quantity === 1) {
+      const index = cartProducts.findIndex(p => p.sku === product.sku);
+      cartProducts.splice(index, 1);
+      setCartProducts(cartProducts);
+      setState(!state);
+    } else {
+      product.quantity = product.quantity - 1;
+      setCartProducts(cartProducts);
+      setState(!state);
+    }
+  };
 
   const products = cartProducts.map(product => {
     return (
-      <CartProduct product={ product } key={ product.sku } />
+      <CartProduct product={ product } removeProduct={() => {removeProduct(product)}} key={ product.sku } />
     );
   });
 
