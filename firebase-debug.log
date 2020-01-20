@@ -1,0 +1,31 @@
+[debug] [2020-01-19T04:04:16.380Z] ----------------------------------------------------------------------
+[debug] [2020-01-19T04:04:16.382Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-01-19T04:04:16.382Z] CLI Version:   7.12.0
+[debug] [2020-01-19T04:04:16.382Z] Platform:      darwin
+[debug] [2020-01-19T04:04:16.382Z] Node Version:  v12.14.1
+[debug] [2020-01-19T04:04:16.385Z] Time:          Sat Jan 18 2020 22:04:16 GMT-0600 (Central Standard Time)
+[debug] [2020-01-19T04:04:16.385Z] ----------------------------------------------------------------------
+[debug] [2020-01-19T04:04:16.385Z] 
+[debug] [2020-01-19T04:04:16.396Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-19T04:04:16.396Z] > authorizing via signed-in user
+[debug] [2020-01-19T04:04:16.396Z] [iam] checking project newshoppingcart-eccbc for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2020-01-19T04:04:16.398Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-19T04:04:16.398Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-19T04:04:17.203Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-19T04:04:17.221Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/newshoppingcart-eccbc:testIamPermissions  
+
+[debug] [2020-01-19T04:04:48.804Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-19T04:04:48.806Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/newshoppingcart-eccbc  
+ 
+[debug] [2020-01-19T04:05:18.811Z] Server Error. ETIMEDOUT
+[debug] [2020-01-19T04:05:19.543Z] FirebaseError: Server Error. ETIMEDOUT
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:30:31)
+    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:223:5)
+    at Request.EventEmitter.emit (domain.js:475:20)
+    at Timeout._onTimeout (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:852:16)
+    at listOnTimeout (internal/timers.js:531:17)
+    at processTimers (internal/timers.js:475:7)
+[error] 
+[error] Error: Failed to get Firebase project newshoppingcart-eccbc. Please make sure the project exists and your account has permission to access it.
