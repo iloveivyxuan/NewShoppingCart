@@ -3,8 +3,7 @@ import CartProduct from './CartProduct';
 
 import './style.scss';
 
-const FloatCart = () => {
-  const [showCart, setShowCart] = useState(true);
+const FloatCart = ({ showCart, setShowCart }) => {
   const [cartProducts, setCartProducts] = useState([]);
 
   const products = cartProducts.map(product => {

@@ -4,7 +4,7 @@ import { Grid } from '@material-ui/core';
 
 import './style.scss'
 
-const Shelf = () => {
+const Shelf = ({ showCart, setShowCart }) => {
   const [data, setData] = useState({});
   const products = Object.values(data);
 
@@ -20,13 +20,13 @@ const Shelf = () => {
   const productList = products.map(product => {
     return (
       <Grid item xs={3}>
-        <Product product={product} key={product.id} />
+        <Product product={product} showCart={showCart} setShowCart={setShowCart} key={product.id} />
       </Grid>
     );
   });
 
   return (
-    <Grid container spacing={3}>
+    <Grid className="shelf-container" container spacing={3}>
       { productList }
     </Grid>
   );

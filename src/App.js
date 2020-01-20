@@ -3,12 +3,14 @@ import Shelf from './components/Shelf';
 import FloatCart from './components/FloatCart';
 
 const App = () => {
+  const [showCart, setShowCart] = useState(false);
+
   return (
     <div className="App">
       <main>
-        <Shelf />
+        <Shelf showCart={showCart} setShowCart={setShowCart} />
       </main>
-      <FloatCart />
+      <FloatCart showCart={showCart} setShowCart={setShowCart} />
     </div>
   );
 };

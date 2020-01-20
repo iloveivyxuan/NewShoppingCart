@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import './style.scss'
-
 const CartProduct = ({ product }) => {
   return (
     <div className="shelf-item">
