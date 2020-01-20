@@ -9,7 +9,10 @@ const CartProduct = ({ product }) => {
       </div>
       <div className="shelf-item__details">
         <p className="title">{ product.title }</p>
-        <p className="desc">{ product.description }</p>
+        <p className="desc">
+          { product.style } <br/>
+          Quality: { product.quantity }
+        </p>
       </div>
       <div className="shelf-item__price">
         <p>{ product.price }</p>

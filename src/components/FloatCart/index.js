@@ -3,12 +3,11 @@ import CartProduct from './CartProduct';
 
 import './style.scss';
 
-const FloatCart = ({ showCart, setShowCart }) => {
-  const [cartProducts, setCartProducts] = useState([]);
+const FloatCart = ({ showCart, setShowCart, cartProducts, setCartProducts }) => {
 
   const products = cartProducts.map(product => {
     return (
-      <CartProduct product={ product } />
+      <CartProduct product={ product } key={ product.sku } />
     );
   });
 
