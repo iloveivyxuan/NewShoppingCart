@@ -110,5 +110,30 @@
 
       transition: background-color 0.2s;
     }
+
+    &__sizes {
+
+    }
+
+    &__sizes-btn {
+      display: inline-block;
+      border: 1px solid transparent;
+      width: 35px;
+      height: 35px;
+      background-color: #ececec;
+      color: #1b1a20;
+      border-radius: 50%;
+      line-height: 35px;
+      font-size: .8em;
+    }
+
+    &__sizes-btn.available {
+      background-color: #1b1a20;
+      color: #ececec;
+
+      &:hover {
+        background-color: #eabf00;
+      }
+    }
   }
 }
