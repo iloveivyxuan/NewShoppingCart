@@ -33,6 +33,25 @@ const FloatCart = ({ showCart, setShowCart, cartProducts, setCartProducts }) => 
     setShowCart(false);
   };
 
+  const proceedToCheckout = () => {
+
+  };
+
+  const totalPrice = () => {
+    if (cartProducts.length === 0) {
+      return {
+        subTotal: 0
+      }
+    } else {
+      const prices = cartProducts.map(p => (p.price * p.quantity));
+      const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      const total = prices.reduce(reducer);
+      return {
+        subTotal: total
+      }
+    }
+  };
+
   return(
     <div className={`float-cart ${showCart? 'float-cart--open' : ''}`}>
       {showCart && (
@@ -57,7 +76,10 @@ const FloatCart = ({ showCart, setShowCart, cartProducts, setCartProducts }) => 
         <div className="float-cart__footer">
           <div className="sub">SUBTOTAL</div>
           <div className="sub-price">
-            <p className="sub-price__val">9.99</p>
+            <p className="sub-price__val">{totalPrice().subTotal}</p>
+          </div>
+          <div onClick={() => proceedToCheckout()} className="buy-btn">
+            Checkout
           </div>
         </div>
       </div>
