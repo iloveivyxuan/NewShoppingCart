@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import CartProduct from './CartProduct';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 import './style.scss';
 
-const FloatCart = ({ showCart, setShowCart, cartProducts, setCartProducts }) => {
+const FloatCart = ({ showCart, setShowCart, cartProducts, setCartProducts, inventory, setInventory }) => {
   const [state, setState] = useState(false);
 
   const removeProduct = (product) => {
@@ -34,7 +36,11 @@ const FloatCart = ({ showCart, setShowCart, cartProducts, setCartProducts }) => 
   };
 
   const proceedToCheckout = () => {
-
+    const ref = firebase.database().ref();
+    ref.update({
+      "inventory": inventory
+    })
+    setCartProducts([]);
   };
 
   const totalPrice = () => {

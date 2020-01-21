@@ -36,7 +36,7 @@ const App = () => {
 
   useEffect(() => {
     const updateInventory = (snapshot) => {
-      setInventory(snapshot.val());
+      setInventory(snapshot.val()['inventory']);
     }
     db.once("value", updateInventory, error => alert(error));
   }, []);

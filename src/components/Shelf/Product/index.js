@@ -13,6 +13,9 @@ const Product = ({ product, showCart, setShowCart, cartProducts, setCartProducts
       list.push(product);
     }
     setCartProducts(cartProducts);
+    inventory[product.sku][size] = inventory[product.sku][size] - 1;
+    setInventory(inventory);
+    console.log(product.sku);
   };
 
   return (
