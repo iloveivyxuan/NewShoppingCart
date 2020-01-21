@@ -10,6 +10,12 @@ main {
   margin: 20px auto 0 auto;
 }
 
+.sign-in-btn {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 1024px) {
   body {
     .filters {

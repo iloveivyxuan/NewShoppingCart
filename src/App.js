@@ -3,6 +3,12 @@ import Shelf from './components/Shelf';
 import FloatCart from './components/FloatCart';
 import firebase from 'firebase/app';
 import 'firebase/database';
+import 'firebase/auth';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { SignIn } from './components/SignIn';
+import SimplePopover from './components/Popover';
+import { Avatar } from '@material-ui/core';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBXsGHQ2R0A-2H2cY7EbNQEZA7FB28NpU4",
@@ -19,9 +25,14 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database().ref();
 
 const App = () => {
+  const [user, setUser] = useState(null);
   const [showCart, setShowCart] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
   const [inventory, setInventory] = useState({});
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(setUser);
+  }, []);
 
   useEffect(() => {
     const updateInventory = (snapshot) => {
@@ -32,6 +43,7 @@ const App = () => {
 
   return (
     <div className="App">
+      {user ? <SimplePopover><Avatar className='sign-in-btn' src={user.photoURL} /></SimplePopover> : <SignIn />}
       <main>
         <Shelf
           showCart={showCart}
