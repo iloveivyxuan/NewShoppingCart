@@ -43,13 +43,13 @@
     border: 1px solid transparent;
     cursor: pointer;
 
-    &:hover {
-      border: 1px solid #eee;
+    // &:hover {
+    //   border: 1px solid #eee;
 
-      .shelf-item__buy-btn {
-        background-color: #eabf00;
-      }
-    }
+    //   .shelf-item__buy-btn {
+    //     background-color: #eabf00;
+    //   }
+    // }
 
     .shelf-stopper {
       position: absolute;
